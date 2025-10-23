@@ -11,7 +11,11 @@ const orderRoutes = require('./routes/orderRoutes');
 
 const app = express();
 
-app.use(cors());
+const corsOptions = {
+  origin: 'https://harsh-bosamiya-202201243.vercel.app'
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 
 const pool = new Pool({
